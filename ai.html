@@ -658,8 +658,28 @@ a,
                 <div class="cursor_dot--violet"></div>
             </div>
         </div>
+        <input type="range" id="volumeControl" min="0" max="0.2" step="0.01" value="0.1">
+        <script>
+            // Get references to the audio element and the volume control slider
+            const audioPlayer = document.getElementById('audioPlayer');
+            const volumeControl = document.getElementById('volumeControl');
+        
+            // Set initial volume to 10% (0.1)
+            audioPlayer.volume = 0.1;
+        
+            // Event listener to update the volume when the slider value changes
+            volumeControl.addEventListener('input', function() {
+                // Ensure the volume does not exceed 20%
+                audioPlayer.volume = volumeControl.value;
+            });
+        </script>
+
+        <audio class="bgAudio" controls autoplay loop>
+            <source src="music/music20.m4a" /></audio>
+
+
         <main id="main" class="main-wrapper">
-            <section class="section_home_hero">
+            <section class="section_home_hero" style="margin-top: -100px;">
                 <div class="padding-global">
                     <div class="padding-section-large no-top-padding-mobile">
                         <div class="container-large">
