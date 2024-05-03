@@ -712,6 +712,11 @@ a,
                 // Ensure the volume does not exceed 20%
                 audioPlayer.volume = volumeControl.value;
             });
+
+             // Add an event listener to play the audio when the page is loaded for the first time
+    window.addEventListener('load', function() {
+        audioPlayer.play();
+    });
         </script>
 
         <audio class="bgAudio" controls autoplay loop>
@@ -720,7 +725,7 @@ a,
         
 
 
-        <main id="main" class="main-wrapper">
+        <main id="main" class="main-wrapper" style="margin-top: -60px;">
             <section class="section_home_hero">
                 <div class="padding-global">
                     <div class="padding-section-large">
