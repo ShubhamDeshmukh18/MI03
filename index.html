@@ -37,6 +37,56 @@
             }
         }
     </style>
+<script>
+function openPDFsInNewTabs() {
+    // URL for the first PDF (myeNovation Kaizen Deck PDF)
+    const url1 = "https://myenovation.com/Updated_website/Assest/brochure/myeNovation_kaizen_Deck.pdf";
+
+    // URL for the second PDF (Success Stories PDF)
+    const url2 = "https://myenovation.com/Updated_website/Assest/brochure/Success_Stories.pdf";
+
+    // Open the first PDF in a new tab and keep a reference to the opened tab
+    const tab1 = window.open(url1, "_blank");
+    
+    // Add an event listener to detect when the first tab is closed
+    tab1.addEventListener('unload', function () {
+        // Use a short timeout to open the second PDF in a new tab after the first tab is closed
+        setTimeout(() => {
+            window.open(url2, "_blank");
+        }, 500); // Delay opening the second tab by 500 milliseconds
+    });
+}
+
+
+</script>
+
+    <script>function redirectToCalendly() {
+        // Get the current date
+        const currentDate = new Date();
+        
+        // Format the date in the "YYYY-MM" format (e.g. "2024-05")
+        const year = currentDate.getFullYear();
+        const month = String(currentDate.getMonth() + 1).padStart(2, '0'); // Months are zero-based in JavaScript
+    
+        const formattedDate = `${year}-${month}`;
+    
+        // Create the URL with the formatted date as a query parameter
+        const url = `https://calendly.com/myenovation/30min?month=${formattedDate}`;
+    
+        // Redirect to the URL
+        window.location.href = url;
+    }
+    
+    // Attach the function to the anchor element's click event
+    const liveDemoButton = document.querySelector('a.Google');
+    liveDemoButton.addEventListener('click', function(event) {
+        // Prevent the default action of the anchor element (navigation)
+        event.preventDefault();
+        
+        // Call the function to redirect to the URL
+        redirectToCalendly();
+    });
+    </script>
     <script type="text/javascript">
         ! function (o, c) {
             var n = c.documentElement,
@@ -44,6 +94,8 @@
             n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
         }(window, document);
     </script>
+
+
     <link style="border-radius: 40px;"
         href="https://myenovation.com/Updated_website/Assest/favicon.ico"
         rel="shortcut icon" type="image/x-icon" />
@@ -648,29 +700,32 @@ a,
 
                 /* [END] Styles for underlining the H2 titles */
             </style>
+
+
         </div>
         <div data-animation="default" class="navbar_component w-nav" data-easing2="ease"
             fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium"
             data-w-id="f36b47ca-febb-67f5-7404-48c471b8ab5b" role="banner" data-duration="400">
             <div class="navbar_background-blur"></div>
             <div class="navbar_container">
-                <div style="width: 150px; height: auto ; background-color: #190c39; border-radius: 15px;">
+                <div style="width: 150px; height: auto ; background-color: #ffffff00; border-radius: 15px;">
                     <!-- Adjust width and height as needed -->
-                    <a href="index.html"> <img src="https://myenovation.com/Updated_website/Assest/cmpyLogo.svg"
+                    <a href="index.html"> 
+                        
+                        <img src="profile/logo2.png"
                             alt="Company Logo" style="width: 100%; height: 100%;">
                     </a>
                 </div>
                 <nav role="navigation" id="header" class="navbar_menu is-page-height-tablet w-nav-menu">
                     <div class="navbar_menu--global"><a href="products.html"
                             class="navbar_link w-nav-link">Products</a><a href="why-myenovation.html"
-                            class="navbar_link w-nav-link">Why myeNovation<sup>™</sup></a><a href="#"
-                            class="navbar_link w-nav-link">Case Studies</a><a href="about-us.html"
-                            class="navbar_link w-nav-link">About us</a>
+                            class="navbar_link w-nav-link">Why myeNovation<sup>™</sup></a><a href="case-studies.html"
+                            class="navbar_link w-nav-link">Case Studies</a>
                         <div class="navbar_menu-buttons hide-tablet"><a href="contact.html"
                                 class="button w-button">Contact Us</a></div>
                     </div>
                     <div class="navbar_menu--service"><a href="jobs.html"
-                            class="navbar_link is-service-link w-nav-link">Jobs</a><a href="#"
+                            class="navbar_link is-service-link w-nav-link">Jobs</a><a href="blog.html"
                             class="navbar_link is-service-link w-nav-link">Blogs</a><a href="culture.html"
                             class="navbar_link is-service-link w-nav-link">Team &amp; Culture</a>
                         
@@ -723,8 +778,160 @@ a,
             <source src="music/music02.m4a" /></audio>
    
         
+            <style>.sticky-icon  {
+                z-index:1;
+                position:fixed;
+                top:15%;
+                right:0%;
+                width:220px;
+                display:flex;
+                flex-direction:column;}  
+            .sticky-icon a  {
+                transform:translate(160px,0px);
+                border-radius:50px 0px 0px 50px;
+                text-align:left;
+                margin:2px;
+                text-decoration:none;
+                text-transform:uppercase;
+                padding:10px;
+                font-size:22px;
+                font-family:'Oswald', sans-serif;
+                transition:all 0.8s;}
+            .sticky-icon a:hover  {
+                color:#FFF;
+                transform:translate(0px,0px);}	
+            .sticky-icon a:hover i  {
+                transform:rotate(360deg);}
+            /*.search_icon a:hover i  {
+                transform:rotate(360deg);}*/
+            .Facebook  {
+                background-color:#2C80D3;
+                color:#FFF;}
+                
+            .Youtube  {
+                background-color:#fa0910;
+                color:#FFF;}
+                
+            .Twitter  {
+                background-color:#53c5ff;
+                color:#FFF;}
+                
+            .Instagram  {
+                background-color:#FD1D1D;
+                color:#FFF;}
+                
+            .Google  {
+                background-color:#d34836;
+                color:#FFF;}						
+            .sticky-icon a i {
+                background-color:#FFF;
+                height:40px;
+                width:40px;
+                color:#000;
+                text-align:center;
+                line-height:40px;
+                border-radius:50%;
+                margin-right:20px;
+                transition:all 0.5s;}
+            .sticky-icon a i.fa-facebook-f  {
+                background-color:#FFF;
+                color:#2C80D3;}
+                
+            .sticky-icon a i.fa-google-plus-g  {
+                background-color:#FFF;
+                color:#d34836;}
+                
+            .sticky-icon a i.fa-instagram  {
+                background-color:#FFF;
+                color:#FD1D1D;}
+                
+            .sticky-icon a i.fa-youtube  {
+                background-color:#FFF;
+                color:#fa0910;}
+                
+            .sticky-icon a i.fa-twitter  {
+                background-color:#FFF;
+                color:#53c5ff;}
+            .fas fa-shopping-cart  {
+                background-color:#FFF;}	
+            #myBtn {
+                height:50px;
+              display: none;
+              position: fixed;
+              bottom: 20px;
+              right: 30px;
+              z-index: 99;
+              text-align:center;
+              padding:10px;
+              text-align:center;
+                line-height:40px;
+              border: none;
+              outline: none;
+              background-color: #1e88e5;
+              color: white;
+              cursor: pointer;
+              border-radius: 50%;
+            }
+            .fa-arrow-circle-up  {
+                font-size:30px;}
+            
+            #myBtn:hover {
+              background-color: #555;
+            }	</style>
+
+<style>
+    /* Add any CSS styling you want for the hero_image-wrapper */
+    .hero_image-wrapper {
+        width: 100%; /* Adjust the width according to your layout */
+        height: auto; /* Adjust the height according to your layout */
+    }
+    .hero_image {
+        width: 90%; /* Adjust the width according to your layout */
+        height: auto; /* Adjust the height according to your layout */
+    }
+</style>
+
+<script>
+    // Array of image URLs
+    const images = [
+        'https://images.pexels.com/photos/11982694/pexels-photo-11982694.jpeg?auto=compress&cs=tinysrgb&w=600',
+        'https://images.pexels.com/photos/18311089/pexels-photo-18311089/free-photo-of-laptop-iphone-and-headphones.jpeg?auto=compress&cs=tinysrgb&w=600', // Modify with your other images
+        'https://images.pexels.com/photos/8473286/pexels-photo-8473286.jpeg?auto=compress&cs=tinysrgb&w=600' // Modify with your other images
+    ];
+    
+    let currentIndex = 0; // Initialize the current index
+    
+    // Function to change the image
+    function changeImage() {
+        const slideshowImage = document.getElementById('slideshowImage');
+        // Update the image source to the next image in the array
+        slideshowImage.src = images[currentIndex];
+        
+        // Increment the current index and loop back to 0 if it reaches the end
+        currentIndex = (currentIndex + 1) % images.length;
+    }
+    
+    // Set an interval to change the image every 3 seconds (3000 milliseconds)
+    setInterval(changeImage, 3000);
+</script>
 
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> 
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <!--Start Sticky Icon--> 
+        <div class="sticky-icon">
+         
+           
+           <a class="Google" onclick="redirectToCalendly(); return false;"><i class="fas fa-calendar-alt"> </i>Live demo</a>
+
+           <a href="tel:+917720035299" class="Youtube"><i class="fas fa-phone"></i> Call Now </a>
+           <a href="https://www.linkedin.com/company/myenovation/?viewAsMember=true" class="Facebook"><i class="fab fa-linkedin"> </i> LinkedIn </a>
+           <a onclick="openPDFsInNewTabs();" class="Twitter"><i class="fas fa-download"> </i> Brochure  </a>   
+        </div>
+
+
+    
         <main id="main" class="main-wrapper" style="margin-top: -100px;">
             <section class="section_home_hero">
                 <div class="padding-global">
@@ -742,12 +949,24 @@ a,
                                         hello to success with us.</p>
                                     <div class="padding-bottom padding-xlarge"></div>
                                 </div>
-                                <div class="hero_image-wrapper" style="margin-top: -20px;"><img
+
+
+                                <!-- <div class="hero_image-wrapper" style="margin-top: -20px;"><img
                                         src="https://raw.githubusercontent.com/ShubhamDeshmukh18/MI03/main/clientLogo/hero/hero04.png"
                                         loading="eager"
                                         sizes="(max-width: 479px) 90vw, (max-width: 767px) 63vw, (max-width: 991px) 54vw, 45vw"
                                         srcset="https://raw.githubusercontent.com/ShubhamDeshmukh18/MI03/main/clientLogo/hero/hero04.png 500w, https://raw.githubusercontent.com/ShubhamDeshmukh18/MI03/main/clientLogo/hero/hero04.png 800w, https://raw.githubusercontent.com/ShubhamDeshmukh18/MI03/main/clientLogo/hero/hero04.png 1128w"
-                                        alt="" class="hero_image" /></div>
+                                        alt="" class="hero_image" /></div> -->
+
+
+                                        <div class="hero_image-wrapper" style="margin-top: -20px;">
+                                            <img
+                                                id="slideshowImage"
+                                                src="https://raw.githubusercontent.com/ShubhamDeshmukh18/MI03/main/clientLogo/hero/hero04.png"
+                                                alt="Slideshow Image"
+                                                class="hero_image"
+                                            />
+                                        </div>
 
                                         
                             </div>
@@ -799,13 +1018,7 @@ a,
             </section>
 
 
-
-           
-
-
-
-                        
-           
+          
             <section class="section_pillars">
                 <div class="padding-global">
                     <div class="padding-section-small">
@@ -909,11 +1122,11 @@ a,
                                             class="pillars_collection-item_link w-inline-block">
                                             <div class="pillars_item_title-wrapper"><script src="https://cdn.lordicon.com/lordicon.js"></script>
                                                 <lord-icon
-                                                    src="https://cdn.lordicon.com/ofdfurqa.json"
-                                                    trigger="loop"
-                                                    delay="2000"
-                                                    style="width:80px;height:80px">
-                                                </lord-icon>
+                                                src="https://cdn.lordicon.com/rqptwppx.json"
+                                                trigger="loop"
+                                                delay="2000"
+                                                style="width:80px;height:80px">
+                                            </lord-icon>
                                                 <h3>AUDITOR </h3>
                                             </div>
                                             <div class="pillars_item_text-wrapper">
@@ -947,8 +1160,11 @@ a,
                                         <a href="kuber.html"
                                             class="pillars_collection-item_link w-inline-block">
                                             <div class="pillars_item_title-wrapper"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+                                                
+
+
                                                 <lord-icon
-                                                    src="https://cdn.lordicon.com/rqptwppx.json"
+                                                    src="https://cdn.lordicon.com/ofdfurqa.json"
                                                     trigger="loop"
                                                     delay="2000"
                                                     style="width:80px;height:80px">
@@ -1597,7 +1813,7 @@ a,
                     </div>
                 </div>
             </section> -->
-            <section class="section_values" >
+            <!-- <section class="section_values" >
                 <div class="padding-global" >
                     <div class="padding-section-large" >
                         <div class="container-large" >
@@ -1690,8 +1906,8 @@ a,
                         </div>
                     </div>
                 </div>
-            </section>
-            <section class="section_image"><img
+            </section> -->
+            <!-- <section class="section_image"><img
                 src="https://myenovation.com/Updated_website/Assest/Dashboard_new.png"
                 loading="lazy"
                 sizes="100vw"
@@ -1707,8 +1923,8 @@ a,
                 alt=""
                 class="image--fullwidth" />
             
-            </section>
-            <section class="section_quote margin-top">
+            </section> -->
+            <!-- <section class="section_quote margin-top">
                 <div class="padding-global">
                     <div class="padding-section-large">
                         <div class="container-large">
@@ -1728,7 +1944,7 @@ a,
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
 
             <style>
@@ -2864,9 +3080,9 @@ a,
                             <div class="insights_content-wrapper">
                                 <div class="pillars_content-wrapper">
                                     <div class="pillars_title-wrapper">
-                                        <h2 data-w-id="71c5cd57-6792-0b91-0dd1-af3fae7b595b" style="opacity:0">Insights
+                                        <h2 data-w-id="71c5cd57-6792-0b91-0dd1-af3fae7b595b" style="opacity:0">Testimonial
                                             and
-                                            <span class="h2-text-span">inspiration</span>
+                                            <span class="h2-text-span">Inspiration</span>
                                         </h2>
                                     </div>
                                     <div class="pillars_text-wrapper">
@@ -2913,9 +3129,9 @@ a,
                                                 <div class="insights_layout_item_details" style="display: flex; justify-content: center;">
                                                  
                                                     <div class="insights_layout_item_ttr">
-                                                        <h5>Rishi Jain</h5>
+                                                        <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rishi Jain &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h5>
                                                     </div>
-                                                    <h6 style="font-size: 14px; font-weight: bold;">Director  Roop Polymers Ltd.</h6>
+                                                    <h6 style="font-size: 14px; font-weight: bold; font-style: italic;">Director  Roop Polymers Ltd.</h6>
                                                 </div>
                                                 <h3 class="insights_layout_item_title" style="font-size: 14px; word-spacing: 0.1em;">
                                                     myeNovation provides a great e-platform for reinforcing Kaizen
@@ -2946,7 +3162,7 @@ a,
                                                     <div class="insights_layout_item_ttr">
                                                         <h5>Shrikant Mundada</h5>
                                                     </div>
-                                                    <h6 style="font-size: 14px; font-weight: bold;">Chief Operating Officer  <br /> Metalman Auto Pvt Ltd</h6>
+                                                    <h6 style="font-size: 14px; font-weight: bold; font-style: italic;">Chief Operating Officer  <br /> Metalman Auto Pvt Ltd</h6>
                                                 </div>
                                                 <h3  class="insights_layout_item_title" style="font-size: 14px; word-spacing: 0.1em;">Thank
                                                     you to the team at Greentin solutions for understanding our needs
@@ -2971,7 +3187,7 @@ a,
                                                     <div class="insights_layout_item_ttr">
                                                         <h5>Sampada Inamdar</h5>
                                                     </div>
-                                                    <h6 style="font-size: 14px; font-weight: bold;">Vice President and Dean ANAND U</h6>
+                                                    <h6 style="font-size: 14px; font-weight: bold; font-style: italic;">Vice President and Dean ANAND U</h6>
                                                 </div>
 
                                                 <h3 class="insights_layout_item_title" style="font-size: 14px; word-spacing: 0.1em;">
@@ -2980,6 +3196,84 @@ a,
                                                     Group. The leadership’s and team’s approach towards understanding
                                                     customer context, building on it, establishing synergies and
                                                     integration with other softwares is done with full cooperation.
+                                                </h3>
+                                                <p class="text-style-2lines text-color-soft-grey w-dyn-bind-empty"></p>
+
+                                            </a>
+                                           
+                                        </div>
+                                    </div>
+
+
+                                    <div fs-cmsnest-element="list" role="list" class="insights_layout w-dyn-items">
+                                        <div role="listitem" class="insights_layout_item mobile-full-width w-dyn-item">
+                                            <a href="#" class="insights_layout_item_link w-inline-block">
+                                               
+                                                <div class="insights_layout_item_details" style="display: flex; justify-content: center;">
+                                                    <img src="https://myenovation.com/Updated_website/Assest/testimonial/S%20Sakthivel.jfif" loading="lazy" alt="" style="height: auto; width: 40%; border-radius: 50%;" class="insights_layout_item_image" />
+                                                   
+                                                </div>
+                                                <div class="insights_layout_item_details" style="display: flex; justify-content: center;">
+                                                 
+                                                    <div class="insights_layout_item_ttr">
+                                                        <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S. Sakthivel &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h5>
+                                                    </div>
+                                                    <h6 style="font-size: 14px; font-weight: bold; font-style: italic;">Sr Manager – Manufacturing & QMS
+                                                        BBL Daido</h6>
+                                                </div>
+                                                <h3 class="insights_layout_item_title" style="font-size: 14px; word-spacing: 0.1em;">
+                                                    myeNovation application is user friendly. We have been using the “Suggestion” module for the last one year and we were able to address key issues based on inputs from the operators in the form of suggestions. Support from vendors is extremely good for any queries. We would like to try other modules also in future. Good teamwork!!</h3>
+                                                <p class="text-style-2lines text-color-soft-grey w-dyn-bind-empty"></p>
+                                                <div data-w-id="6709aa64-2bfc-8f91-bed2-83028e8475f6"
+                                                    class="button is-text-link margin-right-auto">
+                                                    <div> </div>
+
+                                                </div>
+                                            </a>
+                                          
+                                        </div>
+                                        <div role="listitem" class="insights_layout_item mobile-full-width w-dyn-item">
+                                            <a href="#" class="insights_layout_item_link w-inline-block">
+                                              
+                                                
+
+                                                <div class="insights_layout_item_details" style="display: flex; justify-content: center;">
+                                                    <img src="https://myenovation.com/Updated_website/Assest/testimonial/Suresha%20S.jfif" loading="lazy" alt="" style="height: auto; width: 40%; border-radius: 50%;" class="insights_layout_item_image" />
+                                                   
+                                                </div>
+                                                <div class="insights_layout_item_details" style="display: flex; justify-content: center;">
+                                                 
+                                                    <div class="insights_layout_item_ttr">
+                                                        <h5>S. Suresha</h5>
+                                                    </div>
+                                                    <h6 style="font-size: 14px; font-weight: bold; font-style: italic;">Senior General Manager (Information Systems)
+                                                        Simpson & Co. Ltd</h6>
+                                                </div>
+                                                <h3  class="insights_layout_item_title" style="font-size: 14px; word-spacing: 0.1em;">Thank
+                                                    myeNovation Suggestion software by Greentin solutions has brought great changes for Simpsons. It has been a great support for employee engagement in providing valid & valuable suggestion and providing significant contribution towards process improvements. It has paved way for better quality and cost reduction.</h3>
+                                                <p class="text-style-2lines text-color-soft-grey w-dyn-bind-empty"></p>
+
+                                            </a>
+                                         
+                                        </div>
+                                        <div role="listitem" class="insights_layout_item mobile-full-width w-dyn-item">
+                                            <a href="#" class="insights_layout_item_link w-inline-block">
+
+                                                <div class="insights_layout_item_details" style="display: flex; justify-content: center;">
+                                                    <img src="https://myenovation.com/Updated_website/Assest/testimonial/DigvijayBalaji.jfif" loading="lazy" alt="" style="height: auto; width: 40%; border-radius: 50%;" class="insights_layout_item_image" />
+                                                   
+                                                </div>
+                                                <div class="insights_layout_item_details" style="display: flex; justify-content: center;">
+                                                 
+                                                    <div class="insights_layout_item_ttr">
+                                                        <h5>Digvijay Balaji</h5>
+                                                    </div>
+                                                    <h6 style="font-size: 14px; font-weight: bold; font-style: italic;">MD Office
+                                                        Shanti Foumach</h6>
+                                                </div>
+
+                                                <h3 class="insights_layout_item_title" style="font-size: 14px; word-spacing: 0.1em;">
+                                                    The software is well-planned and aligned with industry standards for kaizen processes. The smooth web-based platform enables efficient management for Superadmin and users. Mobile apps engage blue-collar workers seamlessly without interrupting their work. The software offers partial customization and includes features like happiness index and thought of the day. Customer support is excellent, resolving issues promptly. Please continue the great work and keep enhancing myeNovation with updates!
                                                 </h3>
                                                 <p class="text-style-2lines text-color-soft-grey w-dyn-bind-empty"></p>
 
@@ -3174,7 +3468,7 @@ a,
                                         href="why-myenovation.html" class="footer_top_navigation_link">Why myeNovation<sup>™</sup></a>
                                         
                                         <a href="#" class="footer_top_navigation_link">Case studies</a>
-                                    <a href="about-us.html" class="footer_top_navigation_link">About us</a>
+                                    
                                 </nav>
                                 <nav class="footer_top_navigation_column">
                                     <div class="footer_top_navigation_column_title">service</div><a href="jobs.html"
@@ -3245,7 +3539,46 @@ a,
             </div>
             <div class="footer_legal">
                 <div class="footer_legal_content-wrapper">
-                    
+                    <div class="footer_legal-wrapper">
+                        <div class="footer_legal_link w-embed w-iframe w-script"><a href="privacy-policy/policy.html" target="" class="footer_legal_link iubenda-noiframe" title="Privacy Policy ">Privacy Policy</a>
+                            <script type="text/javascript">
+                                (function(w, d) {
+                                    var loader = function() {
+                                        var s = d.createElement("script"),
+                                            tag = d.getElementsByTagName("script")[0];
+                                        s.src = "https://cdn.iubenda.com/iubenda.js";
+                                        tag.parentNode.insertBefore(s, tag);
+                                    };
+                                    if (w.addEventListener) {
+                                        w.addEventListener("load", loader, false);
+                                    } else if (w.attachEvent) {
+                                        w.attachEvent("onload", loader);
+                                    } else {
+                                        w.onload = loader;
+                                    }
+                                })(window, document);
+                            </script>
+                        </div>
+                        <div class="footer_legal_link w-embed w-iframe w-script"><a href="privacy-policy/terms.html" class="footer_legal_link iubenda-noiframe" title="Cookie Policy ">Terms &amp; Conditions</a>
+                            <script type="text/javascript">
+                                (function(w, d) {
+                                    var loader = function() {
+                                        var s = d.createElement("script"),
+                                            tag = d.getElementsByTagName("script")[0];
+                                        s.src = "https://cdn.iubenda.com/iubenda.js";
+                                        tag.parentNode.insertBefore(s, tag);
+                                    };
+                                    if (w.addEventListener) {
+                                        w.addEventListener("load", loader, false);
+                                    } else if (w.attachEvent) {
+                                        w.attachEvent("onload", loader);
+                                    } else {
+                                        w.onload = loader;
+                                    }
+                                })(window, document);
+                            </script>
+                        </div>
+                    </div>
                     <div class="footer_legal_text">© <span id="copyright-year" class="copyright-year">2024</span>
                         myeNovation. all rights reserved | by <a href="#" target="_blank"
                             class="footer_legal_link">GreenTin</a></div>
